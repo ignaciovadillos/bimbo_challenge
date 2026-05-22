@@ -1,0 +1,89 @@
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# ----------------------
+# Environments
+# ----------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ----------------------
+# Build / packaging
+# ----------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ----------------------
+# Jupyter
+# ----------------------
+.ipynb_checkpoints/
+
+# ----------------------
+# MLflow
+# ----------------------
+mlruns/
+
+# ----------------------
+# Data (usually large)
+# ----------------------
+data/*
+!data/.gitkeep
+
+# ----------------------
+# Models / checkpoints
+# ----------------------
+models/*
+!models/.gitkeep
+
+# ----------------------
+# Logs
+# ----------------------
+*.log
+
+# ----------------------
+# Environment variables
+# ----------------------
+.env
+
+# ----------------------
+# Editors / IDE
+# ----------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# ----------------------
+# OS junk
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# Testing / coverage
+# ----------------------
+.coverage
+coverage.xml
+htmlcov/
+
+# ----------------------
+# Mypy / type checking
+# ----------------------
+.mypy_cache/
+
+# ----------------------
+# Temporary files
+# ----------------------
+*.swp
+*.swomlflow.db
+mlflow.db
+mlflow.db
+mlflow.db
