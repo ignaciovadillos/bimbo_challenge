@@ -87,3 +87,5 @@ htmlcov/
 mlflow.db
 mlflow.db
 mlflow.db
+
+data/raw/*
