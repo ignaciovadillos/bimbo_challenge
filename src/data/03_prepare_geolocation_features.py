@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import re
 import time
@@ -18,10 +19,18 @@ try:
 except ImportError:  # pragma: no cover - depends on local environment
     KMeans = None
 
-try:
-    from src.data.raw_regex_features import clean_town_for_geocoding
-except ModuleNotFoundError:  # Allows running this file directly.
-    from raw_regex_features import clean_town_for_geocoding
+def load_clean_town_function():
+    regex_script_path = Path(__file__).resolve().with_name("02_raw_regex_features.py")
+    spec = importlib.util.spec_from_file_location("raw_regex_features", regex_script_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Could not load regex helpers from {regex_script_path}")
+
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.clean_town_for_geocoding
+
+
+clean_town_for_geocoding = load_clean_town_function()
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
