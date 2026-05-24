@@ -89,3 +89,6 @@ mlflow.db
 mlflow.db
 
 data/raw/*
+
+.agents/
+.codex/
